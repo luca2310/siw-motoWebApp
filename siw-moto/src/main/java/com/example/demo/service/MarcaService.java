@@ -1,10 +1,10 @@
-package it.uniroma3.siw.service;
+package com.example.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import it.uniroma3.siw.model.Marca;
-import it.uniroma3.siw.repository.MarcaRepository;
+import com.example.demo.model.Marca;
+import com.example.demo.repository.MarcaRepository;
 
 @Service
 public class MarcaService {

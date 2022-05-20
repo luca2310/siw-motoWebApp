@@ -1,10 +1,10 @@
-package it.uniroma3.siw.service;
+package com.example.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import it.uniroma3.siw.model.Rivenditore;
-import it.uniroma3.siw.repository.RivenditoreRepository;
+import com.example.demo.model.Rivenditore;
+import com.example.demo.repository.RivenditoreRepository;
 
 @Service
 public class RivenditoreService {

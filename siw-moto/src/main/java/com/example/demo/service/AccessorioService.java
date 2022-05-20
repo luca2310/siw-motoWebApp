@@ -1,10 +1,10 @@
-package it.uniroma3.siw.service;
+package com.example.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import it.uniroma3.siw.model.Accessorio;
-import it.uniroma3.siw.repository.AccessorioRepository;
+import com.example.demo.model.Accessorio;
+import com.example.demo.repository.AccessorioRepository;
 
 @Service
 public class AccessorioService {

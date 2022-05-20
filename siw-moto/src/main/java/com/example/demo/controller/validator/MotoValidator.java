@@ -1,11 +1,11 @@
-package it.uniroma3.siw.controller.validator;
+package com.example.demo.controller.validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import it.uniroma3.siw.service.MotoService;
+import com.example.demo.service.MotoService;
 
 @Component
 public class MotoValidator implements Validator {

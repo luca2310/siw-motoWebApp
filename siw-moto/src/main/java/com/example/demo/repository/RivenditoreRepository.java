@@ -1,8 +1,8 @@
-package it.uniroma3.siw.repository;
+package com.example.demo.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import it.uniroma3.siw.model.Rivenditore;
+import com.example.demo.model.Rivenditore;
 
 public interface RivenditoreRepository extends CrudRepository<Rivenditore, Long> {
 

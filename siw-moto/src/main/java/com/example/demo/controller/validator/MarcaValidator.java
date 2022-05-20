@@ -1,17 +1,17 @@
-package it.uniroma3.siw.controller.validator;
+package com.example.demo.controller.validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import it.uniroma3.siw.service.AccessorioService;
+import com.example.demo.service.MarcaService;
 
 @Component
-public class AccessorioValidator implements Validator {
+public class MarcaValidator implements Validator {
 	
 	@Autowired
-	private AccessorioService accessorioService;
+	private MarcaService marcaService;
 
 	@Override
 	public boolean supports(Class<?> clazz) {
