@@ -62,5 +62,4 @@ public class Rivenditore {
 	public void setAccessorio(Accessorio accessorio) {
 		this.accessorio = accessorio;
 	}
-
 }

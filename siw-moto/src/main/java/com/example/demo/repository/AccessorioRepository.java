@@ -6,4 +6,5 @@ import com.example.demo.model.Accessorio;
 
 public interface AccessorioRepository extends CrudRepository<Accessorio, Long> {
 
+	public Accessorio findByNome(String nome);
 }

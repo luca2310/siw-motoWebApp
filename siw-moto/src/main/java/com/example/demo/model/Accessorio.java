@@ -8,7 +8,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -24,11 +25,12 @@ public class Accessorio {
 	
 	private String tipo;
 	
-	@ManyToMany
-	private List<Moto> moto;
+	@ManyToOne
+	@JoinColumn(name = "moto_id")
+	private Moto moto;
 	
 	@OneToMany(mappedBy = "accessorio", cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE}, fetch = FetchType.EAGER)
-	private List<Rivenditore> rivenditori;
+	private List<Rivenditore> rivenditoriDellAccessorio;
 	
 	
 
@@ -64,19 +66,26 @@ public class Accessorio {
 		this.tipo = tipo;
 	}
 
-	public List<Moto> getMoto() {
+	public Moto getMoto() {
 		return moto;
 	}
 
-	public void setMoto(List<Moto> moto) {
+	public void setMoto(Moto moto) {
 		this.moto = moto;
 	}
 
-	public List<Rivenditore> getRivenditori() {
-		return rivenditori;
+	public List<Rivenditore> getRivenditoriDellAccessorio() {
+		return rivenditoriDellAccessorio;
 	}
 
-	public void setRivenditori(List<Rivenditore> rivenditori) {
-		this.rivenditori = rivenditori;
+	public void setRivenditoriDellAccessorio(List<Rivenditore> rivenditori) {
+		this.rivenditoriDellAccessorio = rivenditori;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		Accessorio accessorio = (Accessorio) obj;
+		return this.nome.equals(accessorio.getNome())
+				&& this.tipo.equals(accessorio.getTipo());
 	}
 }

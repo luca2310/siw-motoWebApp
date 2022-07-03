@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,8 +20,8 @@ public class Marca {
 	
 	private String origine;
 	
-	@OneToMany(mappedBy = "marca")
-	private List<Moto> moto;
+	@OneToMany(mappedBy = "marca", cascade = CascadeType.ALL)
+	private List<Moto> motoDellaMarca;
 	
 	
 	
@@ -49,13 +50,17 @@ public class Marca {
 		this.origine = origine;
 	}
 
-	public List<Moto> getMoto() {
-		return moto;
+	public List<Moto> getMotoDellaMarca() {
+		return motoDellaMarca;
 	}
 
-	public void setMoto(List<Moto> moto) {
-		this.moto = moto;
+	public void setMotoDellaMarca(List<Moto> moto) {
+		this.motoDellaMarca = moto;
 	}
 
-	
+	@Override
+	public boolean equals(Object obj) {
+		Marca marca = (Marca) obj;
+		return this.nome.equals(marca.getNome());
+	}
 }

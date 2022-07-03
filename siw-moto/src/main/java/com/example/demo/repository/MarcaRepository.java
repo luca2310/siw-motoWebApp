@@ -6,4 +6,5 @@ import com.example.demo.model.Marca;
 
 public interface MarcaRepository extends CrudRepository<Marca, Long> {
 
+	public Marca findByNome(String nome);
 }

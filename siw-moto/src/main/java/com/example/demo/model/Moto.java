@@ -4,11 +4,13 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Moto {
@@ -19,13 +21,16 @@ public class Moto {
 	
 	private String modello;
 	
+//	private String colore;
+	
 	private Long anno;
 	
 	@ManyToOne
+	@JoinColumn(name = "marca_id")
 	private Marca marca;
 	
-	@ManyToMany(mappedBy = "moto", cascade = {CascadeType.PERSIST})
-	private List<Accessorio> accessori;
+	@OneToMany(mappedBy = "moto", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+	private List<Accessorio> accessoriDellaMoto;
 	
 	
 
@@ -44,6 +49,14 @@ public class Moto {
 	public void setModello(String modello) {
 		this.modello = modello;
 	}
+	
+//	public String getColore() {
+//		return colore;
+//	}
+//	
+//	public void setColore(String colore) {
+//		this.colore = colore;
+//	}
 
 	public Long getAnno() {
 		return anno;
@@ -61,12 +74,18 @@ public class Moto {
 		this.marca = marca;
 	}
 
-	public List<Accessorio> getAccessori() {
-		return accessori;
+	public List<Accessorio> getAccessoriDellaMoto() {
+		return accessoriDellaMoto;
 	}
 
-	public void setAccessori(List<Accessorio> accessori) {
-		this.accessori = accessori;
+	public void setAccessoriDellaMoto(List<Accessorio> accessori) {
+		this.accessoriDellaMoto = accessori;
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		Moto moto = (Moto) obj;
+		return (this.modello.equals(moto.getModello()) 
+				&& this.anno.equals(moto.getAnno()));
+	}
 }

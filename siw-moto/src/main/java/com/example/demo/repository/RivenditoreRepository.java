@@ -6,4 +6,5 @@ import com.example.demo.model.Rivenditore;
 
 public interface RivenditoreRepository extends CrudRepository<Rivenditore, Long> {
 
+	public Rivenditore findByNomeStore(String nomeStore);
 }
