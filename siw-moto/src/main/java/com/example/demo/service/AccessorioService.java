@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.model.Accessorio;
-import com.example.demo.model.Marca;
 import com.example.demo.repository.AccessorioRepository;
 
 @Service

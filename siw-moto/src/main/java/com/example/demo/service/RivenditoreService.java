@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.demo.model.Marca;
 import com.example.demo.model.Rivenditore;
 import com.example.demo.repository.RivenditoreRepository;
 
