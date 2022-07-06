@@ -31,7 +31,7 @@
   -->
 
 </head>
-  <body>
+<body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
@@ -77,83 +77,82 @@
 
     </div>
   </header><!-- End Header -->
-    <img class="card-img img-fluid" th:src="@{/images/moto1.jpg}" > <!-- update -->
-    <div class=" card-img-overlay">
-      <section class="pt-5 pb-5 mt-0 align-items-center d-flex " style="min-height: 100vh; background-size: cover; ">
-        <div class="container-fluid">
-          <div class="row  justify-content-center align-items-center d-flex-row text-center h-100">
-            <div class="col-12 col-md-4 col-lg-3   h-50 ">
-              <div class="card shadow">
-                <div class="card-body mx-auto">
-                  <h4 class="card-title mt-3 text-center">Login </h4>
-                  <form th:action="@{/login}" method="POST">
-                    <div class="form-group input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-                      </div>
-                      <input name="username" class="form-control" placeholder="Username" type="username" required >
+  <img class="card-img img-fluid" th:src="@{/images/moto1.jpg}" >
+  <div class=" card-img-overlay">
+    <section class="pt-5 pb-5 mt-0 align-items-center d-flex " style="min-height: 100vh; background-size: cover; ">
+      <div class="container-fluid">
+        <div class="row  justify-content-center align-items-center d-flex-row text-center h-100">
+          <div class="col-12 col-md-4 col-lg-3   h-50 ">
+            <div class="card shadow">
+              <div class="card-body mx-auto">
+                <h4 class="card-title mt-3 text-center">Login </h4>
+                <form th:action="@{/login}" method="POST">
+                  <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                     </div>
-                    <div class="form-group input-group">
-                      <div class="input-group-prepend"> 
-                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                      </div>
-                      <input name="password" class="form-control" placeholder="Insert password" type="password" required >
-                    </div> 
-                    <div class="form-group">
-                      <button type="submit" class="btn  btn-block" style="background-color:#ab9eb5;"> Login </button>
-                    </div>
-                  </form>
-                </div>
-                <div class="field">
-                  <div class="control">
-                    <p class="title is-6 is-info">Non sei ancora registrato?
-                      <a th:href="@{/register}">Registrati ora</a>
-                    </p>
+                    <input name="username" class="form-control" placeholder="Username" type="username" required >
                   </div>
+                  <div class="form-group input-group">
+                    <div class="input-group-prepend"> 
+                      <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input name="password" class="form-control" placeholder="Insert password" type="password" required >
+                  </div> 
+                  <div class="form-group">
+                    <button type="submit" class="btn  btn-block" style="background-color:#ab9eb5;"> Login </button>
+                  </div>
+                </form>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <p class="title is-6 is-info">Non sei ancora registrato?
+                    <a th:href="@{/register}">Registrati ora</a>
+                  </p>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-    </div>
-    <footer id="footer">
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-md-6">
-              <div class="footer-info">
-                <h3>Moto<span>.</span></h3>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-              <p>
-                Luca Catarinella<br>
-                547511<br><br>
-                <strong>Email:</strong>luc.catarinella@stud.uniroma3.it<br>
-              </p>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-              <p>
-                Guiseppe Caciari<br>
-                546911<br><br>
-                <strong>Email:</strong>giu.caciari@stud.uniroma3.it<br>
-              </p>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-              <p>
-                Federico Occelli<br>
-                547564<br><br>
-                <strong>Email:</strong>fed.occelli@stud.uniroma3.it<br>
-              </p>
-            </div>
-
           </div>
         </div>
       </div>
-    </footer><!-- End Footer -->
-  </body>
+    </section>
+  </div>
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Moto<span>.</span></h3>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <p>
+              Luca Catarinella<br>
+              547511<br><br>
+              <strong>Email:</strong>luc.catarinella@stud.uniroma3.it<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <p>
+              Guiseppe Caciari<br>
+              546911<br><br>
+              <strong>Email:</strong>giu.caciari@stud.uniroma3.it<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <p>
+              Federico Occelli<br>
+              547564<br><br>
+              <strong>Email:</strong>fed.occelli@stud.uniroma3.it<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+</body>
 </html>
