@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +18,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.demo.controller.validator.CredentialsValidator;
 import com.example.demo.controller.validator.UserValidator;
+import com.example.demo.model.Accessorio;
 import com.example.demo.model.Credentials;
+import com.example.demo.model.Marca;
+import com.example.demo.model.Moto;
+import com.example.demo.model.Rivenditore;
 import com.example.demo.model.User;
-import com.example.demo.service.CredentialsService;
+import com.example.demo.service.*;
 
 @Controller
 public class AuthenticationController {
@@ -32,17 +38,17 @@ public class AuthenticationController {
 	@Autowired
 	private CredentialsValidator credentialsValidator;
 	
-//	@Autowired
-//	PiattoService ps;
-//	
-//	@Autowired
-//	BuffetService bs;
-//	
-//	@Autowired
-//	IngredienteService is;
-//	
-//	@Autowired
-//	ChefService cs;
+	@Autowired
+	private MarcaService mas;
+	
+	@Autowired
+	private MotoService mos;
+	
+	@Autowired
+	private AccessorioService as;
+	
+	@Autowired
+	private RivenditoreService rs;
 
 	
 	
@@ -74,20 +80,19 @@ public class AuthenticationController {
 		return "index";
 	}
 	
-	/*
+	
 	@GetMapping("/admin/features")
 	public String features(Model model) {
-		List<Buffet> elencoBuffet = this.bs.findAllBuffet();
-		List<Piatto> elencoPiatti = this.ps.findAllPiatti();
-		List<Chef> elencoChef = this.cs.findAllChef();
-		List<Ingrediente> elencoIngredienti = this.is.findAllIngredienti();
-		model.addAttribute("elencoBuffet", elencoBuffet);
-		model.addAttribute("elencoPiatti", elencoPiatti);
-		model.addAttribute("elencoChef", elencoChef);
-		model.addAttribute("elencoIngredienti", elencoIngredienti);
+		List<Marca> elencoMarche = this.mas.findAllMarche();
+		List<Moto> elencoMoto = this.mos.findAllMoto();
+		List<Accessorio> elencoAccessorio = this.as.findAllAccessori();
+		List<Rivenditore> elencoRivenditori = this.rs.findAllRivenditori();
+		model.addAttribute("elencoMarche", elencoMarche);
+		model.addAttribute("elencoMoto", elencoMoto);
+		model.addAttribute("elencoAccessorio", elencoAccessorio);
+		model.addAttribute("elencoRivenditori", elencoRivenditori);
 		return "adminFeatures.html";
 	}
-	*/
 
 	@PostMapping("/register")
 	public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult userBindingResult,
