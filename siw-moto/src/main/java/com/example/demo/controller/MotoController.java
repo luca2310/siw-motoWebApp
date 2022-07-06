@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.controller.validator.MotoValidator;
-import com.example.demo.model.Buffet;
-import com.example.demo.model.Chef;
 import com.example.demo.model.Marca;
 import com.example.demo.model.Moto;
 import com.example.demo.service.MarcaService;

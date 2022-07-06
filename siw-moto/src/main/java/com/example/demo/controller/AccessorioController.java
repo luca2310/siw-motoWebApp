@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.controller.validator.AccessorioValidator;
 import com.example.demo.model.Accessorio;
-import com.example.demo.model.Buffet;
 import com.example.demo.model.Moto;
-import com.example.demo.model.Piatto;
 import com.example.demo.service.AccessorioService;
 import com.example.demo.service.MotoService;
 

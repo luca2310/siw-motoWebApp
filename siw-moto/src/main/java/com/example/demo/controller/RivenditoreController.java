@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.controller.validator.RivenditoreValidator;
 import com.example.demo.model.Accessorio;
-import com.example.demo.model.Ingrediente;
-import com.example.demo.model.Piatto;
 import com.example.demo.model.Rivenditore;
 import com.example.demo.service.AccessorioService;
 import com.example.demo.service.RivenditoreService;
@@ -113,8 +111,8 @@ public class RivenditoreController {
             model.addAttribute("rivenditore", rivenditore);
             return "rivenditore.html";
         }
-        model.addAttribute("ingrediente", ingrediente);
-        return "ingredienteUpdateForm.html";
+        model.addAttribute("rivenditore", rivenditore);
+        return "rivenditoreUpdateForm.html";
     }
 
 }
