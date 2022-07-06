@@ -6,5 +6,5 @@ import com.example.demo.model.Moto;
 
 public interface MotoRepository extends CrudRepository<Moto, Long> {
 
-	public Moto findByNome(String nome);
+	public Moto findByModelloAndAnno(String nome, Long anno);
 }
