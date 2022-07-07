@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        <link rel="stylesheet" th:href="@{/css/dettagli.css}">
+        <link th:href='@{https://fonts.googleapis.com/css?family=Sirin Stencil}' rel='stylesheet'>
+        <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css}" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <title>Moto SIW</title>
+    </head>
+    <body>
+        <!-- NAVBAR SECTION -->
+        <header th:replace="fragments/base.html :: navbar"></header>
+
+        <br><br><br><br><br>
+
+        <!-- DETAILS SECTION -->
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-8 image">
+                    <img th:src="@{/images/moto.jpg}">
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="portfolio-info">
+                        <h3>INFORMAZIONI SULLA MARCA</h3>
+
+                        <ul>
+                            <li><strong>Nome</strong>: <h6 th:text="${marca.nome}"></li>
+                            <li><strong>Origine</strong>: <h6 th:text="${marca.origine}"></li>
+                            <li><strong>Elenco moto:</strong></li>
+                            <li th:each="moto : ${elencoMoto}">
+                                <p th:text="${moto.modello}"></p>
+                                <a th:href="@{/}">Dettagli</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- FOOTER SECTION -->
+        <footer th:replace="fragments/base.html :: footer"></footer>
+
+    </body>
+</html>

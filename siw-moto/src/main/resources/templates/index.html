@@ -52,23 +52,23 @@
                 <br><br><br><br>
                 <h3 style="color: white; font-size: 28px; font-weight: 700;">ACCEDI AI NOSTRI SERVIZI</h3>
                 <p style="color: white;">Accedi o registrtai per poter navigare senza limiti nel nostro sito</p>
-                <a class="cta-btn" href="@{/login}">Login</a>
+                <a class="cta-btn" th:href="@{/login}">Login</a>
             </div>
         </div>
         
-        <div sec:authorize="hasAnyAuthority('ADMIN')" class="mx-5 mt-5 p-2">
-            <div class="alert alert-success" role="alert">
-                <h3 class="alert-heading">Congratulazioni!</h3>
-                <hr>
-                <p style="font-size: 20px;">Hai effettuato l'accesso con i permessi di amministratore!</p>
+        <div sec:authorize="hasAnyAuthority('ADMIN')" th:style="'background: url(/images/moto.jpg) no-repeat center center fixed; background-size: 100%; height: 300px;'">
+            <div class="text-center">
+                <br><br><br><br>
+                <h3 style="color: white; font-size: 28px; font-weight: 700;">HAI EFFETTUATO L'ACCESSO COME ADMIN</h3>
+                <p style="color: white;">Ora puoi interagire con il database!</p>
             </div>
         </div>
         
-        <div sec:authorize="hasAnyAuthority('DEFAULT')" class="mx-5 mt-5 p-2">
-            <div class="alert alert-success" role="alert">
-                <h3 class="alert-heading">Congratulazioni!</h3>
-                <hr>
-                <p style="font-size: 20px;">Hai effettuato l'accesso come utente!</p>
+        <div sec:authorize="hasAnyAuthority('DEFAULT')" th:style="'background: url(/images/moto.jpg) no-repeat center center fixed; background-size: 100%; height: 300px;'">
+            <div class="text-center">
+                <br><br><br><br>
+                <h3 style="color: white; font-size: 28px; font-weight: 700;">HAI EFFETTUATO L'ACCESSO COME USER</h3>
+                <p style="color: white;">Ora puoi navigare senza limiti nel nostro sito!</p>
             </div>
         </div>
 

@@ -81,18 +81,18 @@ public class AuthenticationController {
 	}
 	
 	
-	@GetMapping("/admin/features")
-	public String features(Model model) {
-		List<Marca> elencoMarche = this.mas.findAllMarche();
-		List<Moto> elencoMoto = this.mos.findAllMoto();
-		List<Accessorio> elencoAccessorio = this.as.findAllAccessori();
-		List<Rivenditore> elencoRivenditori = this.rs.findAllRivenditori();
-		model.addAttribute("elencoMarche", elencoMarche);
-		model.addAttribute("elencoMoto", elencoMoto);
-		model.addAttribute("elencoAccessorio", elencoAccessorio);
-		model.addAttribute("elencoRivenditori", elencoRivenditori);
-		return "adminFeatures.html";
-	}
+//	@GetMapping("/admin/features")
+//	public String features(Model model) {
+//		List<Marca> elencoMarche = this.mas.findAllMarche();
+//		List<Moto> elencoMoto = this.mos.findAllMoto();
+//		List<Accessorio> elencoAccessorio = this.as.findAllAccessori();
+//		List<Rivenditore> elencoRivenditori = this.rs.findAllRivenditori();
+//		model.addAttribute("elencoMarche", elencoMarche);
+//		model.addAttribute("elencoMoto", elencoMoto);
+//		model.addAttribute("elencoAccessorio", elencoAccessorio);
+//		model.addAttribute("elencoRivenditori", elencoRivenditori);
+//		return "adminFeatures.html";
+//	}
 
 	@PostMapping("/register")
 	public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult userBindingResult,

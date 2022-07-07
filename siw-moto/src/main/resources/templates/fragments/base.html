@@ -29,7 +29,7 @@
             </div>
             
             <a sec:authorize="!isAuthenticated()" class="btn rounded-pill text-white" type="login" th:href="@{/login}" style="background-color: darkgoldenrod;">Login</a>
-            <a sec:authorize="isAuthenticated()" class="btn rounded-pill text-white" type="login" th:href="@{/}" style="background-color: darkgoldenrod;">Hai già loggato</a>
+            <a sec:authorize="isAuthenticated()" class="btn rounded-pill text-white" type="login" th:href="@{/}" style="background-color: darkgoldenrod;">Logged</a>
           </nav>
         </header>
 
