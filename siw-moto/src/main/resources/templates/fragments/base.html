@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+    <head>
+        <meta charset="UTF-8" />
+        <title>Base</title>
+        <link th:href='@{https://fonts.googleapis.com/css?family=Sirin Stencil}' rel='stylesheet'>
+        <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css}" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    </head>
+    <body>
+      <!-- NAVBAR -->
+      <header th:fragment="navbar">
+          <nav class="navbar navbar-expand-lg fixed-top d-flex justify-content-between align-items-center" style="background-color: rgba(0, 0, 0, 0.2);">
+            <a id="homeTitle" class="navbar-brand" th:href="@{/}" style="position: relative; color: white; font-size: 50px;"><b>MOTO<span style="color: darkgoldenrod;">.</span></b></a>
+            <div id="navbarNav">
+              <ul class="navbar-nav nav-pills" style="font-size: 25px; text-shadow: 1px 1px black;">
+                <li class="nav-item">
+                  <a class="nav-link" th:href="@{/elencoMarche}" style="color: darkgoldenrod;">Marche</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" th:href="@{/elencoMoto}" style="color: darkgoldenrod;">Moto</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" th:href="@{/elencoAccessori}" style="color: darkgoldenrod;">Accessori</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" th:href="@{/elencoRivenditori}" style="color: darkgoldenrod;">Rivenditori</a>
+                </li>
+              </ul>
+            </div>
+            
+            <a sec:authorize="!isAuthenticated()" class="btn rounded-pill text-white" type="login" th:href="@{/login}" style="background-color: darkgoldenrod;">Login</a>
+            <!--
+            <a sec:authorize="isAuthenticated()" class="btn rounded-pill text-white" type="login" th:href="@{/logout}" style="background-color: #26A69A;">Logout</a>
+            -->
+          </nav>
+        </header>
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+  
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-info">
+                                <h3>Moto<span style="color: darkgoldenrod;">.</span></h3>
+                            </div>
+                        </div>
+  
+                        <div class="col-lg-3 col-md-6">
+                            <p>
+                                <a class="text-white" th:href="@{https://github.com/luca2310}">Luca Catarinella</a><br>
+                                547511<br><br>
+                                <strong>Email: </strong>luc.catarinella@stud.uniroma3.it<br>
+                            </p>
+                        </div>
+  
+                        <div class="col-lg-3 col-md-6">
+                            <p>
+                                <a class="text-white" th:href="@{https://github.com/luca2310}">Guiseppe Caciari</a><br>
+                                546911<br><br>
+                                <strong>Email: </strong>giu.caciari@stud.uniroma3.it<br>
+                            </p>
+                        </div>
+  
+                        <div class="col-lg-3 col-md-6">
+                            <p>
+                                <a class="text-white" th:href="@{https://github.com/luca2310}">Federico Occelli</a><br>
+                                547564<br><br>
+                                <strong>Email: </strong>fed.occelli@stud.uniroma3.it<br>
+                            </p>
+                        </div>
+  
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+    </body>
+</html>
