@@ -1,0 +1,87 @@
+!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        <link th:href='@{https://fonts.googleapis.com/css?family=Sirin Stencil}' rel='stylesheet'>
+        <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css}" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <title>Moto SIW</title>
+    </head>
+    <body>
+        <!-- NAVBAR SECTION -->
+        <header th:replace="fragments/base.html :: navbar"></header>
+
+        <img class="card-img" th:src="@{/images/moto1.jpg}" >
+        <div class="container card-img-overlay mt-4">
+
+            <br><br><br>
+
+            <!-- TITLE SECTION -->
+            <div class=" text-center mt-5 ">
+                <h1 class="title">INSERIMENTO MOTO</h1>
+            </div>
+
+            <div class="row ">
+                <div class="col-lg-7 mx-auto">
+                    <div class="card mt-2 mx-auto p-4 bg-light">
+                        <div class="card-body bg-light">
+           
+                            <div class = "container">
+                                <form id="contact-form" role="form" th:action="@{/admin/moto}" method="POST" th:object="${moto}">
+                                    <div th:if="${#fields.hasGlobalErrors()}">
+                                        <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">Errore Globale</p>
+                                    </div>
+                                    
+                                    <div class="controls">
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="form_model">Modello *</label>
+                                                    <input id="form_model" type="text" name="model" class="form-control" placeholder="Inserisci il modello della moto *" required="required" th:field="*{modello}" >
+                                                    <span th:if="${#fields.hasErrors('modello')}" th:errors="*{modello}"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="form_year">Anno *</label>
+                                                    <input id="form_year" type="text" name="year" class="form-control" placeholder="Inserisci l'anno della moto *" required="required" th:field="*{anno}" >
+                                                    <span th:if="${#fields.hasErrors('anno')}" th:errors="*{anno}"></span>
+                                                </div>        
+                                            </div>
+                                            <div class="col-12 mt-3">
+                                                <div class="form-group">
+                                                    <label for="form_name">Seleziona Marca</label>
+                                                    <div th:if="${marcheDisponibili}">
+                                                        <select class="form-select" name="marcaScelta" aria-label="Default select example">
+                                                            <option th:each="marca : ${marcheDisponibili}" th:value="${marca.id}">
+                                                                <span th:text="${marca.nome}">Nome Marca</span>
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                    <div th:unless="${marcheDisponibili}">
+                                                        <div class="notification p-3 is-danger">Nessuna marca disponibile!</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">                         
+                                                <input type="submit" class="btn btn-success btn-send  pt-2 btn-block" value="Submit Moto" >
+                                            </div>             
+                                        </div>        
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER SECTION -->
+        <footer th:replace="fragments/base.html :: footer"></footer>
+
+    </body>
+</html>
