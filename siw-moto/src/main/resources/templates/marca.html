@@ -26,12 +26,12 @@
                         <h3>INFORMAZIONI SULLA MARCA</h3>
 
                         <ul>
-                            <li><strong>Nome</strong>: <h6 th:text="${marca.nome}"></li>
-                            <li><strong>Origine</strong>: <h6 th:text="${marca.origine}"></li>
+                            <li><strong>Nome</strong>: <h6 th:text="${marca.nome}"></h6></li>
+                            <li><strong>Origine</strong>: <h6 th:text="${marca.origine}"></h6></li>
                             <li><strong>Elenco moto:</strong></li>
                             <li th:each="moto : ${elencoMoto}">
                                 <p th:text="${moto.modello}"></p>
-                                <a th:href="@{/}">Dettagli</a>
+                                <a th:href="@{'/moto/' + ${moto.id}}">Dettagli</a>
                             </li>
                         </ul>
                     </div>

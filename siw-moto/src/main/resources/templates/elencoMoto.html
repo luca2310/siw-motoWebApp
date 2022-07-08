@@ -29,7 +29,7 @@
                     <li th:each="moto : ${elencoMoto}" class="list-group-item d-flex justify-content-between align-content-center item" style="background-color: darkgoldenrod;">
 
                         <div class="text-center" style="margin: auto;">
-                            <h3 style="color: black;" th:text="${moto.nome}"></h3>
+                            <h3 style="color: black;" th:text="${moto.modello}"></h3>
                             <a class="cta-btn" href="moto.html" th:href="@{'/moto/' + ${moto.id}}">Dettagli</a>
                         </div>
     
