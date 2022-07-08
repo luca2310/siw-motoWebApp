@@ -24,3 +24,9 @@
 .list-group-item:hover .check {
 	opacity: 1;
 }
+
+.item .cta-btn:hover {
+    background: #151515;
+    border-color: #151515;
+    color: darkgoldenrod;
+}

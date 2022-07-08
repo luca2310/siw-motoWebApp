@@ -38,17 +38,17 @@ public class AuthenticationController {
 	@Autowired
 	private CredentialsValidator credentialsValidator;
 	
-	@Autowired
-	private MarcaService mas;
-	
-	@Autowired
-	private MotoService mos;
-	
-	@Autowired
-	private AccessorioService as;
-	
-	@Autowired
-	private RivenditoreService rs;
+//	@Autowired
+//	private MarcaService mas;
+//	
+//	@Autowired
+//	private MotoService mos;
+//	
+//	@Autowired
+//	private AccessorioService as;
+//	
+//	@Autowired
+//	private RivenditoreService rs;
 
 	
 	

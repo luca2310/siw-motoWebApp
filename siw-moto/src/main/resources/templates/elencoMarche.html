@@ -27,8 +27,14 @@
             <div class="container d-flex justify-content-center">
 
                 <ul class="list-group mt-5 text-white">
-                    <li th:each="marca : ${elencoMarche}" class="list-group-item d-flex justify-content-between align-content-center" style="background-color: darkgoldenrod;">
+                    <li th:each="marca : ${elencoMarche}" class="list-group-item d-flex justify-content-between align-content-center item" style="background-color: darkgoldenrod;">
+
+                        <div class="text-center" style="margin: auto;">
+                            <h3 style="color: black;" th:text="${marca.nome}"></h3>
+                            <a class="cta-btn" href="marca.html" th:href="@{'/marca/' + ${marca.id}}">Dettagli</a>
+                        </div>
     
+                        <!--
                         <div class="d-flex flex-row">
                             <img th:src="@{/images/moto.jpg}" width="40" />
                             <div class="ml-2">
@@ -36,14 +42,22 @@
                                 <h3 class="mb-0" th:text="${marca.nome}" style="color: black;">
                             </div>
                         </div>
+                        -->
     
+                    </li>
+                    <!-- ADMIN SECTION -->
+                    <li sec:authorize="hasAnyAuthority('ADMIN')" class="list-group-item d-flex justify-content-between align-content-center" style="background-color: #151515;">
+                        <div class="text-center" style="margin: auto;">
+                            <h3 style="color: white; font-size: 28px; font-weight: 700;">AGGIUNGI UNA MARCA</h3>
+                            <a class="cta-btn" th:href="@{/admin/marcaForm}">Aggiungi</a>
+                        </div>
                     </li>
                 </ul>
             </div>
 
         </div>
 
-        <!-- ADMIN SECTION -->
+        <!--
         <div sec:authorize="hasAnyAuthority('ADMIN')" th:style="'background: url(/images/moto.jpg) no-repeat center center fixed; background-size: 100%; height: 300px;'">
             <div class="text-center">
                 <br><br><br><br>
@@ -51,6 +65,7 @@
                 <a class="cta-btn" th:href="@{/admin/marcaForm}">Aggiungi</a>
             </div>
         </div>
+        -->
 
         <!-- FOOTER SECTION -->
         <footer th:replace="fragments/base.html :: footer"></footer>
