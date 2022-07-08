@@ -1,1 +1,74 @@
-elencoAcessori
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        <link rel="stylesheet" th:href="@{/css/elencoStyle.css}">
+        <link th:href='@{https://fonts.googleapis.com/css?family=Sirin Stencil}' rel='stylesheet'>
+        <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css}" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <title>Moto SIW</title>
+    </head>
+    <body>
+        <!-- NAVBAR SECTION -->
+        <header th:replace="fragments/base.html :: navbar"></header>
+
+        <img class="card-img" th:src="@{/images/moto1.jpg}" height="100%">
+        <div class="container card-img-overlay mt-4">
+
+            <br><br><br>
+
+            <!-- TITLE SECTION -->
+            <div class=" text-center mt-5 ">
+                <h1 class="title">ELENCO ACCESSORI</h1>
+            </div>
+
+            <!-- LIST SECTION -->
+            <div class="container d-flex justify-content-center">
+
+                <ul class="list-group mt-5 text-white">
+                    <li th:each="accessorio : ${elencoAccessori}" class="list-group-item d-flex justify-content-between align-content-center item" style="background-color: darkgoldenrod;">
+
+                        <div class="text-center" style="margin: auto;">
+                            <h3 style="color: black;" th:text="${accessorio.nome}"></h3>
+                            <a class="cta-btn" href="accessorio.html" th:href="@{'/accessorio/' + ${accessorio.id}}">Dettagli</a>
+                        </div>
+    
+                        <!--
+                        <div class="d-flex flex-row">
+                            <img th:src="@{/images/moto.jpg}" width="40" />
+                            <div class="ml-2">
+                                <a href="marca.html" th:href="@{'/marca/' + ${marca.id}}" style="color: black;">Dettagli</a>
+                                <h3 class="mb-0" th:text="${marca.nome}" style="color: black;">
+                            </div>
+                        </div>
+                        -->
+    
+                    </li>
+                    <!-- ADMIN SECTION -->
+                    <li sec:authorize="hasAnyAuthority('ADMIN')" class="list-group-item d-flex justify-content-between align-content-center" style="background-color: #151515;">
+                        <div class="text-center" style="margin: auto;">
+                            <h3 style="color: white; font-size: 28px; font-weight: 700;">AGGIUNGI UN ACESSORIO</h3>
+                            <a class="cta-btn" th:href="@{/admin/accessorioForm}">Aggiungi</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!--
+        <div sec:authorize="hasAnyAuthority('ADMIN')" th:style="'background: url(/images/moto.jpg) no-repeat center center fixed; background-size: 100%; height: 300px;'">
+            <div class="text-center">
+                <br><br><br><br>
+                <h3 style="color: white; font-size: 28px; font-weight: 700;">AGGIUNGI UNA MARCA</h3>
+                <a class="cta-btn" th:href="@{/admin/marcaForm}">Aggiungi</a>
+            </div>
+        </div>
+        -->
+
+        <!-- FOOTER SECTION -->
+        <footer th:replace="fragments/base.html :: footer"></footer>
+
+    </body>
+</html>
