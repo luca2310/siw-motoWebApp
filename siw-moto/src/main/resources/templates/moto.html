@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        <link rel="stylesheet" th:href="@{/css/dettagli.css}">
+        <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css}" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <title>Moto SIW</title>
+    </head>
+    <body style="background-color: white;">
+        <!-- NAVBAR SECTION -->
+        <header th:replace="fragments/base.html :: navbar"></header>
+
+        <br><br><br><br><br>
+
+        <!-- DETAILS SECTION -->
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-8 image">
+                    <img th:src="@{/images/sfondoMarca.jpg}">
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="portfolio-info">
+                        <h3>INFORMAZIONI SULLA MOTO</h3>
+
+                        <ul>
+                            <li><strong>Modello</strong>: <h6 th:text="${moto.modello}"></li>
+                            <li><strong>Anno</strong>: <h6 th:text="${moto.anno}"></li>
+                            <li th:object="${moto.marca}">
+                                <strong>Marca</strong>:<h6 th:text="*{nome}">
+                                <a th:href="@{'/marca/' + *{id}}">Dettagli</a>
+                            </li>
+                            <li><strong>Elenco acessori:</strong></li>
+                            <li th:each="acessorio: ${elencoAcessori}">
+                                <p th:text="${acessorio.nome}"></p>
+                                <a th:href="@{/}">Dettagli</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <br><br>
+                    <a sec:authorize="hasAnyAuthority('ADMIN')" class="btn btn-danger" role="button" th:href="@{/admin/deleteMoto(motoId=${moto.id})}">
+                        Elimina Moto
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- FOOTER SECTION -->
+        <footer th:replace="fragments/base.html :: footer"></footer>
+
+    </body>
+</html>
