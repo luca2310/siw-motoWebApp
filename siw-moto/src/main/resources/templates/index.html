@@ -4,7 +4,6 @@
     <head>
         <meta charset="UTF-8" />
         <link rel="stylesheet" th:href="@{/css/style.css}">
-        <link th:href='@{https://fonts.googleapis.com/css?family=Sirin Stencil}' rel='stylesheet'>
         <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css}" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
         <title>Moto SIW</title>
     </head>
@@ -31,7 +30,7 @@
       
             <div class="row">
                 <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-                    <img th:src="@{/images/moto1.jpg}" class="img-fluid" alt="">
+                    <img th:src="@{/images/sfondoMoto.jpg}" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
                     <h3>Non sai come accessoriare la tua moto? Ti aiutiamo noi!</h3>
@@ -47,7 +46,7 @@
         <br><br><br>
 
         <!-- LOGIN SECTION -->
-        <div sec:authorize="!isAuthenticated()" th:style="'background: url(/images/moto.jpg) no-repeat center center fixed; background-size: 100%; height: 300px;'">
+        <div sec:authorize="!isAuthenticated()" th:style="'background: url(/images/sfondoLoginHome.jpg) no-repeat center center fixed; background-size: 100%; height: 300px;'">
             <div class="text-center">
                 <br><br><br><br>
                 <h3 style="color: white; font-size: 28px; font-weight: 700;">ACCEDI AI NOSTRI SERVIZI</h3>
@@ -56,7 +55,7 @@
             </div>
         </div>
         
-        <div sec:authorize="hasAnyAuthority('ADMIN')" th:style="'background: url(/images/moto.jpg) no-repeat center center fixed; background-size: 100%; height: 300px;'">
+        <div sec:authorize="hasAnyAuthority('ADMIN')" th:style="'background: url(/images/sfondoLoginHome.jpg) no-repeat center center fixed; background-size: 100%; height: 300px;'">
             <div class="text-center">
                 <br><br><br><br>
                 <h3 style="color: white; font-size: 28px; font-weight: 700;">HAI EFFETTUATO L'ACCESSO COME ADMIN</h3>
@@ -64,7 +63,7 @@
             </div>
         </div>
         
-        <div sec:authorize="hasAnyAuthority('DEFAULT')" th:style="'background: url(/images/moto.jpg) no-repeat center center fixed; background-size: 100%; height: 300px;'">
+        <div sec:authorize="hasAnyAuthority('DEFAULT')" th:style="'background: url(/images/sfondoLoginHome.jpg) no-repeat center center fixed; background-size: 100%; height: 300px;'">
             <div class="text-center">
                 <br><br><br><br>
                 <h3 style="color: white; font-size: 28px; font-weight: 700;">HAI EFFETTUATO L'ACCESSO COME USER</h3>
