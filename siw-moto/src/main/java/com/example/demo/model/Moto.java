@@ -32,6 +32,10 @@ public class Moto {
 	@OneToMany(mappedBy = "moto", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
 	private List<Accessorio> accessoriDellaMoto;
 	
+	@ManyToOne
+	@JoinColumn(name = "concorso_id")
+	private Concorso concorso;
+	
 	
 
 	public Long getId() {
@@ -81,6 +85,15 @@ public class Moto {
 	public void setAccessoriDellaMoto(List<Accessorio> accessori) {
 		this.accessoriDellaMoto = accessori;
 	}
+	
+	public Concorso getConcorso() {
+		return this.concorso;
+	}
+	
+	public void setConcorso(Concorso concorso) {
+		this.concorso = concorso;
+	}
+	
 	
 	@Override
 	public boolean equals(Object obj) {
