@@ -29,13 +29,14 @@
                             <li><strong>Modello</strong>: <h6 th:text="${moto.modello}"></h6></li>
                             <li><strong>Anno</strong>: <h6 th:text="${moto.anno}"></h6></li>
                             <li th:object="${moto.marca}">
-                                <strong>Marca</strong>:<h6 th:text="*{nome}"></h6>
-                                <a th:href="@{'/marca/' + *{id}}">Dettagli</a>
+                                <strong>Marca</strong>:
+                                <br>
+                                <a style="color: black; font-weight: bold;" th:href="@{'/marca/' + *{id}}" th:text="*{nome}"></a>
                             </li>
                             <li><strong>Elenco acessori:</strong></li>
                             <li th:each="acessorio: ${elencoAcessori}">
-                                <h6 th:text="${acessorio.nome}"></h6>
-                                <a th:href="@{'/accessorio' + ${accessorio.id}}">Dettagli</a>
+                                <br>
+                                <a style="color: black; font-weight: bold;" th:text="${acessorio.nome}" th:href="@{'/accessorio' + ${accessorio.id}}"></a>
                             </li>
                         </ul>
                     </div>
