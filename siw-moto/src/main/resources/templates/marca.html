@@ -30,8 +30,7 @@
                             <li><strong>Origine</strong>: <h6 th:text="${marca.origine}"></h6></li>
                             <li><strong>Elenco moto:</strong></li>
                             <li th:each="moto : ${elencoMoto}">
-                                <br>
-                                <a style="color: black; font-weight: bold;" th:text="${moto.modello}" th:href="@{'/moto/' + ${moto.id}}"></a>
+                                <a style="color: black; font-weight: 10.72px;" th:text="${moto.modello}" th:href="@{'/moto/' + ${moto.id}}"></a>
                             </li>
                         </ul>
                     </div>

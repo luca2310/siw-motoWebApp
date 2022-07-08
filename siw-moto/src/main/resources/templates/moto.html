@@ -31,12 +31,11 @@
                             <li th:object="${moto.marca}">
                                 <strong>Marca</strong>:
                                 <br>
-                                <a style="color: black; font-weight: bold;" th:href="@{'/marca/' + *{id}}" th:text="*{nome}"></a>
+                                <a style="color: black; font-weight: 10.72px;" th:href="@{'/marca/' + *{id}}" th:text="*{nome}"></a>
                             </li>
                             <li><strong>Elenco acessori:</strong></li>
                             <li th:each="acessorio: ${elencoAcessori}">
-                                <br>
-                                <a style="color: black; font-weight: bold;" th:text="${acessorio.nome}" th:href="@{'/accessorio' + ${accessorio.id}}"></a>
+                                <a style="color: black; font-weight: 10.72px;" th:text="${acessorio.nome}" th:href="@{'/accessorio' + ${accessorio.id}}"></a>
                             </li>
                         </ul>
                     </div>
