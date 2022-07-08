@@ -20,7 +20,7 @@ public class Marca {
 	
 	private String origine;
 	
-	@OneToMany(mappedBy = "marca", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "marca", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
 	private List<Moto> motoDellaMarca;
 	
 	

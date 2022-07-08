@@ -27,11 +27,11 @@
                         <div class="card-body bg-light">
            
                             <div class = "container">
-                                <form id="contact-form" role="form" th:action="@{/admin/marca}" method="POST" th:object="${marca}">`
+                                <form id="contact-form" role="form" th:action="@{/admin/marca}" method="POST" th:object="${marca}">
                                     <div th:if="${#fields.hasGlobalErrors()}">
                                         <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">Errore Globale</p>
                                     </div>
-                                    
+
                                     <div class="controls">
                                         
                                         <div class="row">
@@ -44,7 +44,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-12">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="form_origin">Origine *</label>
                                                     <input id="form_origin" type="text" name="origin" class="form-control" placeholder="Inserisci l'origine della marca *" required="required" th:field="*{origine}" >

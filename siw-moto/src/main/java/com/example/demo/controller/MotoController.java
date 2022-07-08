@@ -77,7 +77,7 @@ public class MotoController {
 		return "moto.html";
 	}
 	
-	@GetMapping("/deleteMoto")
+	@GetMapping("/admin/deleteMoto")
 	public String deleteMoto(@RequestParam Long motoId) {
 		this.motoService.rimuovi(motoId);
 		return "redirect:/elencoMoto";

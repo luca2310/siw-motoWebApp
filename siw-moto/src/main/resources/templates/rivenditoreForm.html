@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head>
@@ -18,7 +18,7 @@
 
             <!-- TITLE SECTION -->
             <div class=" text-center mt-5 ">
-                <h1 class="title">INSERIMENTO MOTO</h1>
+                <h1 class="title">INSERIMENTO RIVENDITORE</h1>
             </div>
 
             <div class="row ">
@@ -31,14 +31,14 @@
                                     <div th:if="${#fields.hasGlobalErrors()}">
                                         <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">Errore Globale</p>
                                     </div>
-
+                                    
                                     <div class="controls">
                                         
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="form_name">Nome Store *</label>
-                                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Inserisci il nome dello store *" required="required" th:field="*{nomeStore}" >
+                                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Inserisci il nome dello store*" required="required" th:field="*{nomeStore}" >
                                                     <span th:if="${#fields.hasErrors('nomeStore')}" th:errors="*{nomeStore}"></span>
                                                 </div>
                                             </div>
@@ -46,32 +46,32 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="form_url">URL *</label>
-                                                    <input id="form_url" type="text" name="url" class="form-control" placeholder="Inserisci il link dello store*" required="required" th:field="*{URL}" >
-                                                    <span th:if="${#fields.hasErrors('URL')}" th:errors="*{URl}"></span>
+                                                    <label for="form_url"> URL *</label>
+                                                    <input id="form_url" type="text" name="url" class="form-control" placeholder="Inserisci il link dello sotre*" required="required" th:field="*{URL}">
+                                                    <span th:if="${#fields.hasErrors('URL')}" th:errors="*{URL}"></span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-12">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="form_price">Prezzo *</label>
-                                                    <input id="form_price" type="text" name="price" class="form-control" placeholder="Inserisci il prezzo dell'accessorio*" required="required" th:field="*{prezzo}" >
+                                                    <input id="form_price" type="text" name="price" class="form-control" placeholder="Inserisci il prezzo dell'accessorio *" required="required" th:field="*{prezzo}" >
                                                     <span th:if="${#fields.hasErrors('prezzo')}" th:errors="*{prezzo}"></span>
                                                 </div>        
                                             </div>
                                             <div class="col-12 mt-3">
                                                 <div class="form-group">
-                                                    <label for="form_name">Seleziona Acessorio</label>
+                                                    <label for="form_name">Seleziona Accessorio</label>
                                                     <div th:if="${accessoriDisponibili}">
                                                         <select class="form-select" name="accessorioScelto" aria-label="Default select example">
                                                             <option th:each="accessorio : ${accessoriDisponibili}" th:value="${accessorio.id}">
-                                                                <span th:text="${accessorio.nome}">Nome Acessorio</span>
+                                                                <span th:text="${accessorio.nome}">Nome Accessorio</span>
                                                             </option>
                                                         </select>
                                                     </div>
                                                     <div th:unless="${accessoriDisponibili}">
-                                                        <div class="notification p-3 is-danger">Nessuno Accessorio disponibile!</div>
+                                                        <div class="notification p-3 is-danger">Nessun Accessorio disponibile!</div>
                                                     </div>
                                                 </div>
                                             </div>
