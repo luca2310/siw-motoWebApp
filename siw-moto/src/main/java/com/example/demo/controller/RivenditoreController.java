@@ -54,7 +54,7 @@ public class RivenditoreController {
 	
 	@GetMapping("/admin/rivenditoreForm")
 	public String getRivenditoreForm(Model model) {
-		model.addAttribute("rievnditore", new Rivenditore());
+		model.addAttribute("rivenditore", new Rivenditore());
 		model.addAttribute("accessoriDisponibili", this.accessorioService.findAllAccessori());
 		return "rivenditoreForm.html";
 	}

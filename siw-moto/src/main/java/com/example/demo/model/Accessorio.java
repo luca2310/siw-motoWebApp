@@ -29,7 +29,7 @@ public class Accessorio {
 	@JoinColumn(name = "moto_id")
 	private Moto moto;
 	
-	@OneToMany(mappedBy = "accessorio", cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE}, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "accessorio", cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.EAGER)
 	private List<Rivenditore> rivenditoriDellAccessorio;
 	
 	

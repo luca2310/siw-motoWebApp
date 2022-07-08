@@ -34,8 +34,8 @@
                                 <a style="color: black; font-weight: 10.72px;" th:href="@{'/marca/' + *{id}}" th:text="*{nome}"></a>
                             </li>
                             <li><strong>Elenco acessori:</strong></li>
-                            <li th:each="acessorio: ${elencoAcessori}">
-                                <a style="color: black; font-weight: 10.72px;" th:text="${acessorio.nome}" th:href="@{'/accessorio' + ${accessorio.id}}"></a>
+                            <li th:each="accessorio: ${elencoAccessori}">
+                                <a style="color: black; font-weight: 10.72px;" th:text="${accessorio.nome}" th:href="@{'/accessorio/' + ${accessorio.id}}"></a>
                             </li>
                         </ul>
                     </div>

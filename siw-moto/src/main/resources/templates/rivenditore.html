@@ -30,9 +30,9 @@
                             <li><strong>Url</strong>: <h6 th:text="${rivenditore.URL}"></h6></li>
                             <li><strong>Prezzo</strong>: <h6 th:text="${rivenditore.prezzo}"></h6></li>
                             <li th:object="${rivenditore.accessorio}">
-                                <strong>acessorio</strong>:
+                                <strong>Accessorio</strong>:
                                 <br>
-                                <a style="color: black; font-weight: 10.72px;" th:href="@{'/acessorio/' + *{id}}" th:text="*{nome}"></a>
+                                <a style="color: black; font-weight: 10.72px;" th:href="@{'/accessorio/' + *{id}}" th:text="*{nome}"></a>
                             </li>
                         </ul>
                     </div>

@@ -31,7 +31,7 @@
                                     <div th:if="${#fields.hasGlobalErrors()}">
                                         <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">Errore Globale</p>
                                     </div>
-                                    
+
                                     <div class="controls">
                                         
                                         <div class="row">
@@ -65,7 +65,7 @@
                                                     <label for="form_name">Seleziona Acessorio</label>
                                                     <div th:if="${accessoriDisponibili}">
                                                         <select class="form-select" name="accessorioScelto" aria-label="Default select example">
-                                                            <option th:each="accessoerio : ${accessoriDisponibili}" th:value="${accessorio.id}">
+                                                            <option th:each="accessorio : ${accessoriDisponibili}" th:value="${accessorio.id}">
                                                                 <span th:text="${accessorio.nome}">Nome Acessorio</span>
                                                             </option>
                                                         </select>
