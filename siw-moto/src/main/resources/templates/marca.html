@@ -35,8 +35,15 @@
                         </ul>
                     </div>
                     <br><br>
+                    <a class="btn btn-block btn-outline-dark " role="button" th:href="@{/elencoMarche}">
+                        Torna all'elenco Marche
+                    </a>
+                    <br>
                     <a sec:authorize="hasAnyAuthority('ADMIN')" class="btn btn-danger" role="button" th:href="@{/admin/deleteMarca(marcaId=${marca.id})}">
                         Elimina Marca
+                    </a>
+                    <a sec:authorize="hasAnyAuthority('ADMIN')" class="btn btn-primary" role="button" th:href="@{/admin/motoForm}" >
+                        Aggiungi una Moto
                     </a>
                 </div>
             </div>

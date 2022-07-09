@@ -41,8 +41,15 @@
                         </ul>
                     </div>
                     <br><br>
+                    <a class="btn btn-block btn-outline-dark " role="button" th:href="@{/elencoAccessori}">
+                        Torna all'elenco Accessori
+                    </a>
+                    <br>
                     <a sec:authorize="hasAnyAuthority('ADMIN')" class="btn btn-danger" role="button" th:href="@{/admin/deleteAccessorio(accessorioId=${accessorio.id})}">
                         Elimina Acessorio
+                    </a>
+                    <a sec:authorize="hasAnyAuthority('ADMIN')" class="btn btn-primary" role="button" th:href="@{/admin/rivenditoreForm}" >
+                        Aggiungi un Rivenditore
                     </a>
                 </div>
             </div>
