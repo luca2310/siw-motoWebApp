@@ -79,40 +79,4 @@ public class RivenditoreController {
 		return "rivenditore.html";
 	}
 
-	
-	@GetMapping("/admin/updateRivenditore")
-    private String updateRivenditoreForm(@RequestParam Long rivenditoreId, Model model) {
-        model.addAttribute("rivenditore", this.rivenditoreService.searchById(rivenditoreId));
-        model.addAttribute("accessoriDisponibili", this.accessorioService.findAllAccessori());
-        return "rivenditoreUpdateForm.html";
-    }
-
-    @PostMapping("/admin/rivenditoreUpdate/{id}")
-    private String updateRivenditore(@Valid @ModelAttribute("rivenditore") Rivenditore rivenditore, 
-    		@RequestParam(name = "accessorioScelto") Long accessorioId,
-            BindingResult bindingResult,
-            Model model) {
-
-        this.rivenditoreValidator.validate(rivenditore, bindingResult);
-        if (!bindingResult.hasErrors()) {
-            Accessorio accessorioNuovo = this.accessorioService.searchById(accessorioId);
-            Accessorio accessorioVecchio = rivenditore.getAccessorio();
-
-            if(accessorioVecchio!=null) {
-                for(Rivenditore r : accessorioVecchio.getRivenditoriDellAccessorio()) {
-                    if(r.getId() == rivenditore.getId()) {
-                        accessorioVecchio.getRivenditoriDellAccessorio().remove(r);
-                    }
-                }
-            }
-            rivenditore.setAccessorio(accessorioNuovo);
-            accessorioNuovo.getRivenditoriDellAccessorio().add(rivenditore);
-            this.accessorioService.inserisci(accessorioNuovo);
-            model.addAttribute("rivenditore", rivenditore);
-            return "rivenditore.html";
-        }
-        model.addAttribute("rivenditore", rivenditore);
-        return "rivenditoreUpdateForm.html";
-    }
-
 }

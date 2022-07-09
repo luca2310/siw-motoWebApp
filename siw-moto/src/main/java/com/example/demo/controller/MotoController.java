@@ -82,42 +82,5 @@ public class MotoController {
 		this.motoService.rimuovi(motoId);
 		return "redirect:/elencoMoto";
 	}
-	
-
-	@GetMapping("/admin/updateMoto")
-    private String updateMotoForm(@RequestParam Long motoId, Model model) {
-        model.addAttribute("moto", this.motoService.searchById(motoId));
-        model.addAttribute("marcheDisponibili", this.marcaService.findAllMarche());
-        return "motoUpdateForm.html";
-    }
-
-    @PostMapping("/admin/motoUpdate/{id}")
-    private String updateMoto(@Valid @ModelAttribute("moto") Moto moto, 
-    		@RequestParam(name = "marcaScelta") Long marcaId,
-            BindingResult bindingResult,
-            Model model) {
-
-        this.motoValidator.validate(moto, bindingResult);
-        if (!bindingResult.hasErrors()) {
-            Marca marcaNuova = this.marcaService.searchById(marcaId);
-            Marca marcaVecchia = moto.getMarca();
-
-            if(marcaVecchia!=null) {
-                for(Moto m : marcaVecchia.getMotoDellaMarca()) {
-                    if(m.getId() == moto.getId()) {
-                        marcaVecchia.getMotoDellaMarca().remove(m);
-                    }
-                }
-            }
-            moto.setMarca(marcaNuova);
-            marcaNuova.getMotoDellaMarca().add(moto);
-            this.marcaService.inserisci(marcaNuova);
-            model.addAttribute("moto", moto);
-            model.addAttribute("elencoAccessori", moto.getAccessoriDellaMoto());
-            return "moto.html";
-        }
-        model.addAttribute("moto", moto);
-        return "motoUpdateForm.html";
-    }
 
 }

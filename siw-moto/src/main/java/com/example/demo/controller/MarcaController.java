@@ -69,24 +69,4 @@ public class MarcaController {
 		this.marcaService.rimuovi(marcaId);
 		return "redirect:/elencoMarche";
 	}
-	
-	
-	@GetMapping("/admin/updateMarca")
-    private String updateMarcaForm(@RequestParam Long marcaId, Model model) {
-        model.addAttribute("marca", this.marcaService.searchById(marcaId));
-        return "marcaUpdateForm.html";
-    }
-
-    @PostMapping("/admin/marcaUpdate/{id}")
-    private String updateMarca(@Valid @ModelAttribute("marca") Marca marca, BindingResult bindingResult, Model model) {
-
-        this.marcaValidator.validate(marca, bindingResult);
-        if (!bindingResult.hasErrors()) {
-            model.addAttribute("marca", marca);
-            model.addAttribute("elencoMoto", marca.getMotoDellaMarca());
-            return "marca.html";
-        }
-        model.addAttribute("marca", marca);
-        return "marcaUpdateForm.html";
-    }
 }

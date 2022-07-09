@@ -79,42 +79,5 @@ public class AccessorioController {
 		return "accessorio.html";
 	}
 
-	
-	@GetMapping("/admin/updateAccessorio")
-    private String updateAccessorioForm(@RequestParam Long accessorioId, Model model) {
-        model.addAttribute("accessorio", this.accessorioService.searchById(accessorioId));
-        model.addAttribute("motoDisponibili", this.motoService.findAllMoto());
-        return "accessorioUpdateForm.html";
-    }
-
-    @PostMapping("/admin/accesorioUpdate/{id}")
-    private String updateAccessorio(@Valid @ModelAttribute("accessorio") Accessorio accessorio, 
-    		@RequestParam(name = "motoScelta") Long motoId,
-            BindingResult bindingResult,
-            Model model) {
-
-        this.accessorioValidator.validate(accessorio, bindingResult);
-        if (!bindingResult.hasErrors()) {
-            Moto motoNuova = this.motoService.searchById(motoId);
-            Moto motoVecchia = accessorio.getMoto();
-
-            if(motoVecchia!=null) {
-                for(Accessorio a : motoVecchia.getAccessoriDellaMoto()) {
-                    if(a.getId() == accessorio.getId()) {
-                        motoVecchia.getAccessoriDellaMoto().remove(a);
-                    }
-                }
-            }
-            accessorio.setMoto(motoNuova);
-            motoNuova.getAccessoriDellaMoto().add(accessorio);
-            this.motoService.inserisci(motoNuova);
-            model.addAttribute("accessorio", accessorio);
-            model.addAttribute("elencoRivenditori", accessorio.getRivenditoriDellAccessorio());
-            return "accessorio.html";
-        }
-        model.addAttribute("accessorio", accessorio);
-        return "accessorioUpdateForm.html";
-    }
-
 
 }
