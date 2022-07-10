@@ -72,7 +72,7 @@ public class AccessorioController {
 	}
 	
 	@GetMapping("/accessorio/{id}")
-	public String getPiatto(@PathVariable("id") Long id, Model model) {
+	public String getAccessorio(@PathVariable("id") Long id, Model model) {
 		Accessorio accessorio = this.accessorioService.searchById(id);
 		model.addAttribute("accessorio", accessorio);
 		model.addAttribute("elencoRivenditori", accessorio.getRivenditoriDellAccessorio());
