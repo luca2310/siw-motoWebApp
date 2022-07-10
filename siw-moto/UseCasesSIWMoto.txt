@@ -1,0 +1,40 @@
+CASI D'USO PROGETTO MOTO SIW
+CATARINELLA LUCA 547511
+CACIARI GIUSEPPE 546911
+OCCELLI FEDERICO 547564
+
+CASO D'USO 1 - Aggiunta di una moto
+	1. Admin accede al sistema tramite username e password
+	2. Il sistema mostra la pagina di default
+	3. L'admin sceglie di aggiungere una moto
+	4. L'admin inserisce modello e anno della moto
+	5. Il sistema mostra tutti le possibili marche
+	6. L'admin seleziona la marca da associare alla moto
+	7. Il sistema mostra i dati della moto creata
+
+CASO D'USO 2 - Visione dati di una moto
+	1. Utente accede al sistema tramite username e password
+	2. L'utente sceglie di visualizzare una moto
+	3. Il sistema mostra tutte le moto disponibili
+	4. L'utente sceglie la moto da visualizzare
+	5. Il sistema mostra i dati della moto scelta
+
+CASO D'USO 3 - Visione dati di un accessorio appartenente a una moto
+	1. Utente accede al sistema tramite username e password
+	2. L'utente sceglie di visualizzare una moto
+	3. Il sistema mostra tutti le moto disponibili
+	4. L'utente sceglie la moto da visualizzare
+	5. Il sistema mostra i dati della moto scelta
+	6. L'utente sceglie un accessorio della moto da visualizzare
+	7. Il sistema mostra i dati dell'accessorio scelto
+
+CASO D'USO 4 - Eliminazione di un accessorio appartenente a una moto
+	1. Admin accede al sistema tramite username e password
+	2. L'admin sceglie di visualizzare una moto
+	3. Il sistema mostra tutti le moto disponibili
+	4. L'admin sceglie la moto da visualizzare
+	5. Il sistema mostra i dati della moto scelta
+	6. L'admin sceglie un accessorio della moto da eliminare
+	7. Il sistema mostra i dati dell'accessorio scelto
+	8. L'admin sceglie di eliminare l'accessorio
+	9. Il sistema mostra l'elenco degli accessori
